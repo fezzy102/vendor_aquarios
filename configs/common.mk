@@ -27,3 +27,8 @@ PRODUCT_COPY_FILES += \
 
 # AquariOS bootanimation 
 -include vendor/aquarios/configs/bootanima.mk
+
+# init.d script support
+PRODUCT_COPY_FILES += \
+    vendor/aquarios/prebuilt/bin/sysinit:system/bin/sysinit \
+    vendor/aquarios/prebuilt/root/init.aquarios.rc:root/init.aquarios.rc
