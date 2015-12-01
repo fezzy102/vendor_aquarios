@@ -78,3 +78,8 @@ PRODUCT_COPY_FILES += \
 # Clean up packages cache to avoid wrong strings and resources
 PRODUCT_COPY_FILES += \
     vendor/aquarios/prebuilt/bin/clean_cache.sh:system/bin/clean_cache.sh
+
+# Include explicitly to work around GMS issues
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full \
+    librsjni
