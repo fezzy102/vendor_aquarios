@@ -56,3 +56,8 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     PixelTheme \
     Stock
+
+# Include explicitly to work around GMS issues
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full \
+    librsjni
