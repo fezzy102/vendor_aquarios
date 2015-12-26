@@ -31,3 +31,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.rotation_locked=true \
     ro.opa.eligible_device=true \
     persist.sys.disable_rescue=true
+
+# Proprietary latinime libs needed for Keyboard swyping
+PRODUCT_COPY_FILES += \
+    vendor/aquarios/prebuilt/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
+
