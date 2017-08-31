@@ -42,6 +42,10 @@ PRODUCT_COPY_FILES += \
     vendor/aquarios/prebuilt/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
 endif
 
+# Fix Dialer
+PRODUCT_COPY_FILES +=  \
+    vendor/aquarios/prebuilt/etc/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
+
 # Clean up packages cache to avoid wrong strings and resources
 PRODUCT_COPY_FILES += \
     vendor/aquarios/prebuilt/bin/clean_cache.sh:system/bin/clean_cache.sh
