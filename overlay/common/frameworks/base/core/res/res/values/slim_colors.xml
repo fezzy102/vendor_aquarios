@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2017 SlimRoms Project
+     Copyright (C) 2017 AquariOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -17,13 +17,13 @@
 
 <resources>
 
-    <!-- Slim colors -->
+    <!-- AquariOS colors -->
     <add-resource type="color" name="slim_blue" />
     <color name="slim_blue">#FF297DAF</color>
     <add-resource type="color" name="slim_grey" />
     <color name="slim_grey">#FF9B9B9B</color>
 
-    <!-- Slim extra colors -->
+    <!-- AquariOS extra colors -->
     <add-resource type="color" name="slim_ochre_yellow" />
     <color name="slim_ochre_yellow">#FFEEB128</color>
     <add-resource type="color" name="slim_grey_870" />
