@@ -73,8 +73,15 @@ endif
 # Optional packages
 PRODUCT_PACKAGES += \
     Basic \
+    Nova \
+    HotwordEnrollment \
     LiveWallpapersPicker \
-    PhaseBeam
+    Turbo \
+    WallpaperPickerGooglePrebuilt \
+    NexusLauncherPrebuilt \
+    PrebuiltDeskClockGoogle \
+    PhaseBeam \
+    OmniJaws
 
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += \
