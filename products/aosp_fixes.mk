@@ -34,5 +34,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Proprietary latinime libs needed for Keyboard swyping
 PRODUCT_COPY_FILES += \
-    vendor/aquarios/prebuilt/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
-
+    vendor/aquarios/prebuilt/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so \
+    vendor/aquarios/prebuilt/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
