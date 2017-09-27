@@ -18,6 +18,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
+    vendor/aquarios/prebuilt/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/aquarios/prebuilt/addon.d/50-aquarios.sh:system/addon.d/50-aquarios.sh \
     vendor/aquarios/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/aquarios/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh 
