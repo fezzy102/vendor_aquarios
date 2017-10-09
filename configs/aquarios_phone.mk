@@ -29,3 +29,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Thank you, please drive thru!
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.dun.override=0
+
+# Fix Google dialer
+PRODUCT_COPY_FILES += \
+    vendor/aquarios/prebuilt/etc/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
