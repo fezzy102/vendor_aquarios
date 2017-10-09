@@ -1,4 +1,4 @@
-add_lunch_combo angler-user
-add_lunch_combo bullhead-user
-add_lunch_combo sailfish-user
+add_lunch_combo angler-userdebug
+add_lunch_combo bullhead-userdebug
+add_lunch_combo sailfish-userdebug
 
