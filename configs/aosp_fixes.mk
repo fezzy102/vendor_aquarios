@@ -16,7 +16,7 @@
 ifeq ($(filter marlin sailfish,$(TARGET_PRODUCT)),)
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
-    ro.control_privapp_permissions=enforce \
+#   ro.control_privapp_permissions=enforce \ (CAUSING SETUP WIZ FC)
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
     ro.com.google.clientidbase=android-google \
