@@ -22,3 +22,7 @@ PRODUCT_COPY_FILES += \
     vendor/aquarios/prebuilt/addon.d/50-aquarios.sh:system/addon.d/50-aquarios.sh \
     vendor/aquarios/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/aquarios/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh 
+
+# Disable Rescue Party
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.disable_rescue=true
