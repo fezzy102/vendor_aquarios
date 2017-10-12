@@ -41,6 +41,10 @@ PRODUCT_COPY_FILES += \
     vendor/aquarios/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/aquarios/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh 
 
+# Disable Rescue Party
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.disable_rescue=true
+
 # AquariOS versioning
 ifndef AQUARIOS_BUILD_TYPE
     AQUARIOS_BUILD_TYPE := UNOFFICIAL
