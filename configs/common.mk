@@ -22,8 +22,8 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker
 
 # Copy Magisk zip
-PRODUCT_COPY_FILES += \
-    vendor/aquarios/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
+# PRODUCT_COPY_FILES += \
+#    vendor/aquarios/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
 
 # AquariOS bootanimation 
 -include vendor/aquarios/configs/bootanima.mk
