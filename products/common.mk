@@ -45,6 +45,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.disable_rescue=true
 
+# Set custom volume steps
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.media_vol_steps=30
+
+$(call inherit-product-if-exists, vendor/aquarios/prebuilt/app/Android.mk)
+
 # AquariOS versioning
 ifndef AQUARIOS_BUILD_TYPE
     AQUARIOS_BUILD_TYPE := UNOFFICIAL
