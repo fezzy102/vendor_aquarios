@@ -26,3 +26,9 @@ PRODUCT_COPY_FILES += \
 # Disable Rescue Party
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.disable_rescue=true
+
+# Set custom volume steps
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.media_vol_steps=30
+
+$(call inherit-product-if-exists, vendor/aquarios/prebuilt/app/Android.mk)
