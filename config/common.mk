@@ -99,7 +99,6 @@ PRODUCT_PACKAGES += \
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
-    Launcher3 \
     AquariOSWallpapers \
     LatinIME \
     BluetoothExt \
