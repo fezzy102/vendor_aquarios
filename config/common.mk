@@ -60,6 +60,10 @@ PRODUCT_COPY_FILES += \
     vendor/aquarios/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
     vendor/aquarios/prebuilt/common/bin/sysinit:system/bin/sysinit
 
+#boot animation
+    PRODUCT_COPY_FILES += \
+        vendor/aquarios/prebuilt/bootanimation/1440.zip:system/media/bootanimation.zip
+
 # debug packages
 ifneq ($(TARGET_BUILD_VARIENT),user)
 PRODUCT_PACKAGES += \
@@ -95,9 +99,7 @@ PRODUCT_PACKAGES += \
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
-    AquariOSBootAnimation \
-    AquariOSLauncher \
-    AquariOSWallpaperResizer \
+    Launcher3 \
     AquariOSWallpapers \
     LatinIME \
     BluetoothExt \
