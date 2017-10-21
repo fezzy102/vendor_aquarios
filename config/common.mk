@@ -10,6 +10,7 @@ endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true
+    ro.carrier=unknown
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
