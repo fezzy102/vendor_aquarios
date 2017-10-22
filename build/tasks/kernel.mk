@@ -32,9 +32,9 @@
 #   TARGET_USES_UNCOMPRESSED_KERNEL    = 'true' if Kernel is uncompressed,
 #                                          optional, defaults to false
 #   TARGET_KERNEL_CROSS_COMPILE_PREFIX = Compiler prefix (e.g. arm-eabi-)
-#                                          defaults to arm-linux-androidkernel- for arm
-#                                                      aarch64-linux-androidkernel- for arm64
-#                                                      x86_64-linux-androidkernel- for x86
+#                                          defaults to arm-linux-androideabi- for arm
+#                                                      aarch64-linux-android- for arm64
+#                                                      x86_64-linux-android- for x86
 #
 #   BOARD_KERNEL_IMAGE_NAME            = Built image name, optional,
 #                                          defaults to Image.gz on arm64
@@ -142,16 +142,6 @@ else
     KERNEL_ADDITIONAL_CONFIG_SRC := /dev/null
 endif
 
-## Do be discontinued in a future version. Notify builder about target
-## kernel format requirement
-ifeq ($(BOARD_KERNEL_IMAGE_NAME),)
-ifeq ($(BOARD_USES_UBOOT),true)
-        $(error "Please set BOARD_KERNEL_IMAGE_NAME to uImage")
-else ifeq ($(BOARD_USES_UNCOMPRESSED_BOOT),true)
-        $(error "Please set BOARD_KERNEL_IMAGE_NAME to Image")
-endif
-endif
-
 ifeq "$(wildcard $(KERNEL_SRC) )" ""
     ifneq ($(TARGET_PREBUILT_KERNEL),)
         HAS_PREBUILT_KERNEL := true
@@ -170,7 +160,6 @@ ifeq "$(wildcard $(KERNEL_SRC) )" ""
         $(warning * THIS IS DEPRECATED, AND WILL BE DISCONTINUED                *)
         $(warning * Please configure your device to download the kernel         *)
         $(warning * source repository to $(KERNEL_SRC))
-        $(warning * See http://wiki.cyanogenmod.org/w/Doc:_integrated_kernel_building)
         $(warning * for more information                                        *)
         $(warning ***************************************************************)
         FULL_KERNEL_BUILD := false
@@ -222,12 +211,12 @@ endif
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(strip $(TARGET_KERNEL_CROSS_COMPILE_PREFIX))
 ifneq ($(TARGET_KERNEL_CROSS_COMPILE_PREFIX),)
 KERNEL_TOOLCHAIN_PREFIX ?= $(TARGET_KERNEL_CROSS_COMPILE_PREFIX)
-else ifeq ($(KERNEL_ARCH),arm64)
-KERNEL_TOOLCHAIN_PREFIX ?= aarch64-linux-androidkernel-
-else ifeq ($(KERNEL_ARCH),arm)
-KERNEL_TOOLCHAIN_PREFIX ?= arm-linux-androidkernel-
-else ifeq ($(KERNEL_ARCH),x86)
-KERNEL_TOOLCHAIN_PREFIX ?= x86_64-linux-androidkernel-
+else ifeq ($(TARGET_ARCH),arm64)
+KERNEL_TOOLCHAIN_PREFIX ?= aarch64-linux-android-
+else ifeq ($(TARGET_ARCH),arm)
+KERNEL_TOOLCHAIN_PREFIX ?= arm-linux-androideabi-
+else ifeq ($(TARGET_ARCH),x86)
+KERNEL_TOOLCHAIN_PREFIX ?= x86_64-linux-android-
 endif
 
 ifeq ($(KERNEL_TOOLCHAIN),)
@@ -270,8 +259,7 @@ define clean-module-folder
 endef
 
 ifeq ($(HOST_OS),darwin)
-  MAKE_FLAGS += C_INCLUDE_PATH=$(ANDROID_BUILD_TOP)/external/elfutils/libelf:/usr/local/opt/openssl/include
-  MAKE_FLAGS += LIBRARY_PATH=/usr/local/opt/openssl/lib
+  MAKE_FLAGS += C_INCLUDE_PATH=$(ANDROID_BUILD_TOP)/external/elfutils/libelf/
 endif
 
 ifeq ($(TARGET_KERNEL_MODULES),)
@@ -297,8 +285,6 @@ $(KERNEL_CONFIG): $(KERNEL_OUT_STAMP) $(KERNEL_DEFCONFIG_SRC) $(KERNEL_ADDITIONA
 			echo "Overriding kernel config with '$(KERNEL_CONFIG_OVERRIDE)'"; \
 			echo $(KERNEL_CONFIG_OVERRIDE) >> $(KERNEL_OUT)/.config; \
 			$(MAKE) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) oldconfig; fi
-	# Create defconfig build artifact
-	$(hide) $(MAKE) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) savedefconfig
 	$(hide) if [ ! -z "$(KERNEL_ADDITIONAL_CONFIG)" ]; then \
 			echo "Using additional config '$(KERNEL_ADDITIONAL_CONFIG)'"; \
 			$(KERNEL_SRC)/scripts/kconfig/merge_config.sh -m -O $(KERNEL_OUT) $(KERNEL_OUT)/.config $(KERNEL_SRC)/arch/$(KERNEL_ARCH)/configs/$(KERNEL_ADDITIONAL_CONFIG); \
@@ -362,12 +348,6 @@ kernelxconfig kernelconfig: $(KERNEL_OUT_STAMP)
 	$(MAKE) $(MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_DEFCONFIG)
 	env KCONFIG_NOTIMESTAMP=true \
 		 $(MAKE) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNELCONFIG_MODE)
-	env KCONFIG_NOTIMESTAMP=true \
-		 $(MAKE) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) savedefconfig
-	cp $(KERNEL_OUT)/defconfig $(KERNEL_DEFCONFIG_SRC)
-
-kernelsavedefconfig: $(KERNEL_OUT_STAMP)
-	$(MAKE) $(MAKE_FLAGS) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) $(KERNEL_DEFCONFIG)
 	env KCONFIG_NOTIMESTAMP=true \
 		 $(MAKE) -C $(KERNEL_SRC) O=$(KERNEL_OUT) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) savedefconfig
 	cp $(KERNEL_OUT)/defconfig $(KERNEL_DEFCONFIG_SRC)

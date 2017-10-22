@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # Copyright (C) 2012-2013, The CyanogenMod Project
-# Copyright (C) 2012-2015, AquariOS Project
+# Copyright (C) 2012-2015, SlimRoms Project
+# Copyright (C) 2017, AQUARIOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -40,13 +41,12 @@ except ImportError:
     urllib.request = urllib2
 
 DEBUG = False
-default_manifest = ".repo/manifest.xml"
-
+default_manifest = ".repo/manifests/aquarios_default.xml"
 custom_local_manifest = ".repo/local_manifests/aquarios_manifest.xml"
-custom_default_revision = "ng7.0"
+custom_default_revision = "8.0"
 custom_dependencies = "aquarios.dependencies"
-org_manifest = "AquariOS"  # leave empty if org is provided in manifest
-org_display = "AquariOS"  # needed for displaying
+org_manifest = "AQUARIOS-Devices"  # leave empty if org is provided in manifest
+org_display = "AQUARIOS-Devices"  # needed for displaying
 
 github_auth = None
 
