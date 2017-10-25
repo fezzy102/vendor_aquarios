@@ -51,6 +51,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.media_vol_steps=30 \
     ro.config.bt_sco_vol_steps=30
 
+# Prebuilt busybox fstrim command
+PRODUCT_COPY_FILES += \
+    vendor/aquarios/prebuilt/bin/fstrim:system/bin/fstrim
+
 $(call inherit-product-if-exists, vendor/aquarios/prebuilt/app/Android.mk)
 
 # AquariOS versioning
