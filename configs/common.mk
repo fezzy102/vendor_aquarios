@@ -43,3 +43,10 @@ AQUARIOS_VERSION := $(PLATFORM_VERSION)-$(AQUARIOS_BUILD_TYPE)-$(shell date +%Y%
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.aquarios.version=$(AQUARIOS_VERSION)
+
+# DU Utils Library
+PRODUCT_PACKAGES += \
+    org.dirtyunicorns.utils
+
+PRODUCT_BOOT_JARS += \
+    org.dirtyunicorns.utils
