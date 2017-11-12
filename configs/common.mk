@@ -30,3 +30,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/aquarios/prebuilt/bin/sysinit:system/bin/sysinit \
     vendor/aquarios/prebuilt/root/init.aquarios.rc:root/init.aquarios.rc
+
+# Boot animations
+$(call inherit-product-if-exists, vendor/aquarios/config/bootanimation.mk)
