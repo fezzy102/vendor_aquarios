@@ -60,9 +60,9 @@ PRODUCT_COPY_FILES += \
     vendor/aquarios/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
     vendor/aquarios/prebuilt/common/bin/sysinit:system/bin/sysinit
 
-#boot animation
-    PRODUCT_COPY_FILES += \
-        vendor/aquarios/prebuilt/bootanimation/1440.zip:system/media/bootanimation.zip
+# Boot animations
+$(call inherit-product-if-exists, vendor/aquarios/config/bootanimation.mk)
+
 
 # debug packages
 ifneq ($(TARGET_BUILD_VARIENT),user)
