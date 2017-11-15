@@ -158,8 +158,7 @@ PRODUCT_BOOT_JARS += \
     telephony-ext
 
 PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/aquarios/overlay/common \
-    vendor/aquarios/overlay/dictionaries
+    vendor/aquarios/overlay/common
 
 # Versioning System
 # AquariOS version.
