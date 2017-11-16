@@ -20,7 +20,8 @@ PRODUCT_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     Launcher3 \
     LiveWallpapersPicker \
-    OmniJaws
+    OmniJaws \
+    OmniStyle
 
 # Copy Magisk zip
 # PRODUCT_COPY_FILES += \
