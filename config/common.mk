@@ -90,7 +90,8 @@ PRODUCT_PACKAGES += \
     NexusLauncherPrebuilt \
     PrebuiltDeskClockGoogle \
     PhaseBeam \
-    OmniJaws
+    OmniJaws \
+    OmniStyle
 
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += \
