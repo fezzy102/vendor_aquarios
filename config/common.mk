@@ -112,6 +112,13 @@ PRODUCT_PACKAGES += \
 ## Don't compile SystemUITests
 EXCLUDE_SYSTEMUI_TESTS := true
 
+# DU Utils Library
+PRODUCT_PACKAGES += \
+    org.dirtyunicorns.utils
+
+PRODUCT_BOOT_JARS += \
+    org.dirtyunicorns.utils
+
 # Extra tools
 PRODUCT_PACKAGES += \
     openvpn \
