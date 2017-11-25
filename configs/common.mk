@@ -34,3 +34,10 @@ PRODUCT_COPY_FILES += \
 
 # Boot animations
 $(call inherit-product-if-exists, vendor/aquarios/config/bootanimation.mk)
+
+# DU Utils Library
+PRODUCT_PACKAGES += \
+    org.dirtyunicorns.utils
+
+PRODUCT_BOOT_JARS += \
+    org.dirtyunicorns.utils
