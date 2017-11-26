@@ -20,6 +20,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.debug.alloc=0
 
 # Default sounds
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.notification_sound=Chime.ogg \
     ro.config.alarm_alert=Flow.ogg \
     ro.config.ringtone=Zen.ogg
