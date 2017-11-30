@@ -86,13 +86,9 @@ endif
 # Optional packages
 PRODUCT_PACKAGES += \
     Basic \
-    Nova \
     HotwordEnrollment \
     LiveWallpapersPicker \
     Turbo \
-    WallpaperPickerGooglePrebuilt \
-    NexusLauncherPrebuilt \
-    PrebuiltDeskClockGoogle \
     PhaseBeam \
     OmniJaws \
     OmniStyle
