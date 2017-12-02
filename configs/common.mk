@@ -41,3 +41,13 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     org.dirtyunicorns.utils
+
+# AquariOS versioning
+ifndef AQUARIOS_BUILD_TYPE
+    AQUARIOS_BUILD_TYPE := UNOFFICIAL
+endif
+
+AQUARIOS_VERSION := $(PLATFORM_VERSION)-$(AQUARIOS_BUILD_TYPE)-$(shell date +%Y%m%d-%H%M)
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.aquarios.version=$(AQUARIOS_VERSION)
