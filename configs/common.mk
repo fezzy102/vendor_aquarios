@@ -18,10 +18,10 @@ PRODUCT_PACKAGE_OVERLAYS += \
 
 # Main Required Packages
 PRODUCT_PACKAGES += \
-    Launcher3 \
     LiveWallpapersPicker \
     OmniJaws \
-    OmniStyle
+    OmniStyle \
+    Nova
 
 # Copy Magisk zip
 # PRODUCT_COPY_FILES += \
