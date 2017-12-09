@@ -100,7 +100,8 @@ PRODUCT_PACKAGES += \
     Turbo \
     PhaseBeam \
     OmniJaws \
-    OmniStyle
+    OmniStyle \
+    Nova
 
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += \
