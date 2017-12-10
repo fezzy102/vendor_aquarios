@@ -101,7 +101,8 @@ PRODUCT_PACKAGES += \
     PhaseBeam \
     OmniJaws \
     OmniStyle \
-    Nova
+    Nova \
+    PrebuiltDeskClockGoogle
 
 # Include explicitly to work around GMS issues
 PRODUCT_PACKAGES += \
