@@ -33,8 +33,3 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/aquarios/prebuilt/bin/sysinit:system/bin/sysinit \
     vendor/aquarios/prebuilt/root/init.aquarios.rc:root/init.aquarios.rc
-
-# Default ringtone
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.ringtone=Lollipop.ogg \
-    ro.config.notification_sound=Knock.ogg
