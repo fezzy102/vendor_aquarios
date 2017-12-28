@@ -20,7 +20,8 @@ PRODUCT_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     Launcher3 \
     LiveWallpapersPicker \
-    OmniJaws
+    OmniJaws \
+    OmniStyle
 
 # Copy Magisk zip
 # PRODUCT_COPY_FILES += \
@@ -50,3 +51,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     org.dirtyunicorns.utils
+
+# Themes
+PRODUCT_PACKAGES += \
+    PixelTheme \
+    Stock

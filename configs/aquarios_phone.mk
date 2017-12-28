@@ -28,3 +28,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Thank you, please drive thru!
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.dun.override=0
+
+# Set AquariOS theme to Aqua (aka Stock)
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.boot.vendor.overlay.theme=com.google.android.theme.stock
