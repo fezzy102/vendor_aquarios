@@ -12,25 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Include aquarios telephony configuration
-include vendor/aquarios/configs/aquarios_phone.mk
+# Include stock N bootanimation.
 
-# Inherit AOSP device configuration for bullhead
-$(call inherit-product, device/lge/bullhead/aosp_bullhead.mk)
-
-# Override AOSP build properties
-PRODUCT_NAME := bullhead
-PRODUCT_BRAND := google
-PRODUCT_DEVICE := bullhead
-PRODUCT_MODEL := Nexus 5X
-PRODUCT_MANUFACTURER := LGE
-
-# Device Fingerprint
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=bullhead \
-    BUILD_FINGERPRINT=google/bullhead/bullhead:8.1.0/OPM1.171019.011/4448085:user/release-keys \
-    PRIVATE_BUILD_DESC="bullhead-user 8.1.0 OPM1.171019.011 4448085 release-keys"
-
-#boot animation
+ifneq ($(filter 1080,$(TARGET_SCREEN_WIDTH)),)
     PRODUCT_COPY_FILES += \
         vendor/aquarios/prebuilt/bootanimation/1080.zip:system/media/bootanimation.zip
+endif
+ifneq ($(filter 1440,$(TARGET_SCREEN_WIDTH)),)
+    PRODUCT_COPY_FILES += \
+        vendor/aquarios/prebuilt/bootanimation/1440.zip:system/media/bootanimation.zip
+endif

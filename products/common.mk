@@ -20,20 +20,25 @@ PRODUCT_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     Launcher3 \
     LiveWallpapersPicker \
-    OmniJaws \
-    OmniStyle
+    OmniJaws
 
 # Copy Magisk zip
 # PRODUCT_COPY_FILES += \
 #    vendor/aquarios/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
 
-# AquariOS bootanimation 
--include vendor/aquarios/configs/bootanima.mk
+# Boot animations
+$(call inherit-product-if-exists, vendor/aquarios/products/bootanimation.mk)
 
-# init.d script support
+# Init.d script support
 PRODUCT_COPY_FILES += \
     vendor/aquarios/prebuilt/bin/sysinit:system/bin/sysinit \
-    vendor/aquarios/prebuilt/root/init.aquarios.rc:root/init.aquarios.rc
+    vendor/aquarios/prebuilt/init.d/init.d.rc:root/init.d.rc
+
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    vendor/aquarios/prebuilt/addon.d/50-aquarios.sh:system/addon.d/50-aquarios.sh \
+    vendor/aquarios/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/aquarios/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh 
 
 # AquariOS versioning
 ifndef AQUARIOS_BUILD_TYPE
@@ -56,3 +61,15 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     PixelTheme \
     Stock
+
+# Fix Dialer
+PRODUCT_COPY_FILES +=  \
+    vendor/aquarios/prebuilt/etc/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
+
+# Latin IME lib - gesture typing
+PRODUCT_COPY_FILES += \
+    vendor/aquarios/prebuilt/etc/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+
+# Enable SIP+VoIP on all targets
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml

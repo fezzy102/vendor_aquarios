@@ -1,6 +1,6 @@
 #
 # This policy configuration will be used by all products that
-# inherit from aquarios
+# inherit from pure
 #
 
 BOARD_SEPOLICY_DIRS += \

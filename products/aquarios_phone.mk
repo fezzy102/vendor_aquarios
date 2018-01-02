@@ -12,14 +12,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Include stock N bootanimation.
+include vendor/aquarios/products/aosp_fixes.mk
+include vendor/aquarios/products/common.mk
 
-ifeq (angler,$(TARGET_PRODUCT))
-PRODUCT_COPY_FILES += \
-    vendor/aquarios/prebuilt/media/angler.zip:system/media/bootanimation.zip
-endif
+# Telephony packages
+PRODUCT_PACKAGES += \
+    Stk \
+    CellBroadcastReceiver
 
-ifeq (shamu,$(TARGET_PRODUCT))
-PRODUCT_COPY_FILES += \
-    vendor/aquarios/prebuilt/media/shamu.zip:system/media/bootanimation.zip
-endif
+# Allow tethering without provisioning app
+PRODUCT_PROPERTY_OVERRIDES += \
+    net.tethering.noprovisioning=true
+
+# Thank you, please drive thru!
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.dun.override=0
+
+# Set AquariOS theme to Aqua (aka Stock)
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.boot.vendor.overlay.theme=com.google.android.theme.stock
