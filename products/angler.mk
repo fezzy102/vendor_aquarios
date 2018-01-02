@@ -30,3 +30,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=angler \
     BUILD_FINGERPRINT=google/angler/angler:8.1.0/OPM1.171019.011/4448085:user/release-keys \
     PRIVATE_BUILD_DESC="angler-user 8.1.0 OPM1.171019.011 4448085 release-keys"
+
+#boot animation
+    PRODUCT_COPY_FILES += \
+        vendor/aquarios/prebuilt/bootanimation/1440.zip:system/media/bootanimation.zip
