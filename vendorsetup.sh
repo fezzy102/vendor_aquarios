@@ -22,3 +22,6 @@
 
 add_lunch_combo oneplus3-userdebug
 add_lunch_combo oneplus3-eng
+add_lunch_combo angler-userdebug
+add_lunch_combo angler-eng
+
