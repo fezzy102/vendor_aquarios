@@ -25,9 +25,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dataroaming=false \
     ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
     ro.setupwizard.rotation_locked=true \
-    ro.config.notification_sound=Chime.ogg \
-    ro.config.alarm_alert=Flow.ogg \
-    ro.config.ringtone=Zen.ogg
     ro.carrier=unknown
 endif
 
