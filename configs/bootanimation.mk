@@ -14,12 +14,11 @@
 
 # Include stock N bootanimation.
 
-ifeq (angler,$(TARGET_PRODUCT))
-PRODUCT_COPY_FILES += \
-    vendor/aquarios/prebuilt/media/angler.zip:system/media/bootanimation.zip
+ifneq (1080,$(TARGET_SCREEN_WIDTH))
+    PRODUCT_COPY_FILES += \
+        vendor/aquarios/prebuilt/bootanimation/1080.zip:system/media/bootanimation.zip
 endif
-
-ifeq (shamu,$(TARGET_PRODUCT))
-PRODUCT_COPY_FILES += \
-    vendor/aquarios/prebuilt/media/shamu.zip:system/media/bootanimation.zip
+ifneq (1440,$(TARGET_SCREEN_WIDTH))
+    PRODUCT_COPY_FILES += \
+        vendor/aquarios/prebuilt/bootanimation/1440.zip:system/media/bootanimation.zip
 endif

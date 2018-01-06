@@ -30,7 +30,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=bullhead \
     BUILD_FINGERPRINT=google/bullhead/bullhead:8.1.0/OPM3.171019.013/4499252:user/release-keys \
     PRIVATE_BUILD_DESC="bullhead-user 8.1.0 OPM3.171019.013 4499252 release-keys"
-
-#boot animation
-    PRODUCT_COPY_FILES += \
-        vendor/aquarios/prebuilt/bootanimation/1080.zip:system/media/bootanimation.zip

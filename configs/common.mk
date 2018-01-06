@@ -28,7 +28,7 @@ PRODUCT_PACKAGES += \
 #    vendor/aquarios/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
 
 # AquariOS bootanimation 
--include vendor/aquarios/configs/bootanima.mk
+-include vendor/aquarios/configs/bootanimation.mk
 
 # init.d script support
 PRODUCT_COPY_FILES += \
