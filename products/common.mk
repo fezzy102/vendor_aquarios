@@ -20,7 +20,9 @@ PRODUCT_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     Launcher3 \
     LiveWallpapersPicker \
-    OmniJaws
+    OmniJaws \
+    OmniStyle \
+    WallpaperPickerGooglePrebuilt
 
 # Copy Magisk zip
 # PRODUCT_COPY_FILES += \
@@ -55,8 +57,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/aquarios/prebuilt/bin/fstrim:system/bin/fstrim
 
-$(call inherit-product-if-exists, vendor/aquarios/prebuilt/app/Android.mk)
-
 # AquariOS versioning
 ifndef AQUARIOS_BUILD_TYPE
     AQUARIOS_BUILD_TYPE := UNOFFICIAL
@@ -78,10 +78,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     PixelTheme \
     Stock
-
-# Fix Dialer
-PRODUCT_COPY_FILES +=  \
-    vendor/aquarios/prebuilt/etc/sysconfig/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
 # Latin IME lib - gesture typing
 PRODUCT_COPY_FILES += \
