@@ -21,7 +21,8 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     LiveWallpapersPicker \
     OmniJaws \
-    OmniStyle
+    OmniStyle \
+    WallpaperPickerGooglePrebuilt
 
 # Copy Magisk zip
 # PRODUCT_COPY_FILES += \
