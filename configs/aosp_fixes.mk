@@ -13,10 +13,8 @@
 # limitations under the License.
 
 # Google property overides
-ifeq ($(filter marlin sailfish,$(TARGET_PRODUCT)),)
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
-    ro.control_privapp_permissions=enforce \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
     ro.com.google.clientidbase=android-google \
@@ -24,12 +22,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dataroaming=false \
     ro.atrace.core.services=com.google.android.gms,com.google.android.gms.ui,com.google.android.gms.persistent \
-    ro.setupwizard.rotation_locked=true \
-    ro.carrier=unknown
-endif
-
-# Get some sounds
-$(call inherit-product-if-exists, frameworks/base/data/sounds/GoogleAudio.mk)
+    ro.setupwizard.rotation_locked=true
+    #    ro.control_privapp_permissions=enforce \
 
 # Proprietary latinime libs needed for Keyboard swyping
 ifneq ($(filter shamu,$(TARGET_PRODUCT)),)
