@@ -12,23 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include vendor/aquarios/products/aosp_fixes.mk
-include vendor/aquarios/products/common.mk
-include vendor/aquarios/products/themes.mk
-
-# Telephony packages
+# Packages
 PRODUCT_PACKAGES += \
-    Stk \
-    CellBroadcastReceiver
-
-# Allow tethering without provisioning app
-PRODUCT_PROPERTY_OVERRIDES += \
-    net.tethering.noprovisioning=true
-
-# Thank you, please drive thru!
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.dun.override=0
-
-# Set AquariOS theme to Aqua (aka Stock)
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.boot.vendor.overlay.theme=com.google.android.theme.stock
+    SystemDarkTheme
