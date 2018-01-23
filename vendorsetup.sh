@@ -20,5 +20,9 @@
 # In particular, you can add lunch options with the add_lunch_combo
 # function: add_lunch_combo generic-eng
 
+add_lunch_combo cheeseburger-userdebug
+add_lunch_combo cheeseburger-eng
+add_lunch_combo dumpling-userdebug
+add_lunch_combo dumpling-eng
 add_lunch_combo oneplus3-userdebug
 add_lunch_combo oneplus3-eng
