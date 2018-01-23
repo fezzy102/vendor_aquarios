@@ -14,4 +14,5 @@
 
 # Packages
 PRODUCT_PACKAGES += \
+    SettingsDarkTheme \
     SystemDarkTheme
