@@ -38,5 +38,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Packages
 PRODUCT_PACKAGES += \
+    DuiDarkTheme \
     SettingsDarkTheme \
     SystemDarkTheme
