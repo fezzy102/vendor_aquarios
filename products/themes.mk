@@ -14,5 +14,6 @@
 
 # Packages
 PRODUCT_PACKAGES += \
+    DuiDarkTheme \
     SettingsDarkTheme \
     SystemDarkTheme
