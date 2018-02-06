@@ -26,3 +26,11 @@ add_lunch_combo dumpling-userdebug
 add_lunch_combo dumpling-eng
 add_lunch_combo oneplus3-userdebug
 add_lunch_combo oneplus3-eng
+add_lunch_combo pme-userdebug
+add_lunch_combo pme-eng
+add_lunch_combo h811-userdebug
+add_lunch_combo h811-eng
+add_lunch_combo h870-userdebug
+add_lunch_combo h870-eng
+add_lunch_combo us997-userdebug
+add_lunch_combo us997-eng
