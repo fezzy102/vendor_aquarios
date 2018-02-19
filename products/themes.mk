@@ -15,7 +15,7 @@
 # Packages
 PRODUCT_PACKAGES += \
     GBoardDarkTheme \
-    DuiDarkTheme \
+    SystemUIDarkTheme \
     SettingsDarkTheme \
     SystemDarkTheme
 
