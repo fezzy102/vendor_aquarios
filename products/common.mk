@@ -78,11 +78,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     org.dirtyunicorns.utils
 
-# Themes
-PRODUCT_PACKAGES += \
-    PixelTheme \
-    Stock
-
 # Latin IME lib - gesture typing
 PRODUCT_COPY_FILES += \
     vendor/aquarios/prebuilt/etc/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so

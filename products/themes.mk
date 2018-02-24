@@ -22,11 +22,12 @@ PRODUCT_PACKAGES += \
 # Overlays
 PRODUCT_PACKAGES += \
     AmberAccent \
+    AquaAccent \
     BlackAccent \
-    BlueAccent \
     BlueGreyAccent \
     BrownAccent \
     CyanAccent \
+    DarkRedAccent \
     DeepOrangeAccent \
     DeepPurpleAccent \
     GreenAccent \
@@ -39,6 +40,5 @@ PRODUCT_PACKAGES += \
     PinkAccent \
     PurpleAccent \
     RedAccent \
-    TealAccent \
     YellowAccent \
     WhiteAccent
