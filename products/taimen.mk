@@ -19,8 +19,17 @@ include vendor/aquarios/configs/aquarios_phone.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
-# Inherit AOSP device configuration for  taimen
-$(call inherit-product, device/google/taimen/aosp_taimen.mk)
+# Call some device specific files for taimen
+$(call inherit-product, device/google/taimen/device.mk)
+$(call inherit-product-if-exists, vendor/google_devices/taimen/proprietary/device-vendor.mk)
+$(call inherit-product-if-exists, vendor/google/taimen/taimen-vendor.mk)
+
+# Build with gapps
+$(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
+
+# Audio effects
+PRODUCT_COPY_FILES += \
+    device/google/taimen/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 
 # Include AmbientSense if it's available
 -include vendor/ambientmusic/AmbientMusic.mk
@@ -37,6 +46,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=taimen \
     BUILD_FINGERPRINT=google/taimen/taimen:8.1.0/OPM1.171019.018/4518263:user/release-keys \
     PRIVATE_BUILD_DESC="taimen-user 8.1.0 OPM1.171019.018 4518263 release-keys"
-
-$(call inherit-product-if-exists, vendor/google/taimen/taimen-vendor.mk)
-$(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
