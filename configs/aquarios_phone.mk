@@ -32,3 +32,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Set AquariOS theme to Aqua (aka Stock)
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.boot.vendor.overlay.theme=com.google.android.theme.stock
+
+# TEMP: Force enable VoLTE/VoWiFi until it's able to be fixed properly
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.dbg.ims_volte_enable=1 \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1 \
+    persist.radio.calls.on.ims=1 \
+    persist.radio.rat_on=combine
