@@ -66,3 +66,7 @@ PRODUCT_PACKAGES += \
     RedAccent \
     YellowAccent \
     WhiteAccent
+
+# Fonts
+PRODUCT_PACKAGES += \
+    Fonts
