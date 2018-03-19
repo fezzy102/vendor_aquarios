@@ -24,6 +24,8 @@ add_lunch_combo cheeseburger-userdebug
 add_lunch_combo cheeseburger-eng
 add_lunch_combo dumpling-userdebug
 add_lunch_combo dumpling-eng
+add_lunch_combo natrium-userdebug
+add_lunch_combo natrium-eng
 add_lunch_combo oneplus3-userdebug
 add_lunch_combo oneplus3-eng
 add_lunch_combo pme-userdebug
