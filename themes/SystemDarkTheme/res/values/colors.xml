@@ -39,5 +39,7 @@
     <color name="toast_bg_color">@*android:color/background_material_dark</color>
     <color name="toast_text_color">@android:color/white</color>
 
+    <color name="autofill_save_title_color">@android:color/black</color>
+    <color name="autofill_autofill_save_custom_subtitle_color">@android:color/black</color>
 </resources>
 
