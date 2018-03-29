@@ -4,4 +4,5 @@ add_lunch_combo sailfish-userdebug
 add_lunch_combo marlin-userdebug
 add_lunch_combo taimen-userdebug
 add_lunch_combo shamu-userdebug
+add_lunch_combo walleye-userdebug
 
