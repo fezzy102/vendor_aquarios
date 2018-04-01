@@ -40,3 +40,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.wfc_avail_ovr=1 \
     persist.radio.calls.on.ims=1 \
     persist.radio.rat_on=combine
+
+# World APN list
+PRODUCT_COPY_FILES += \
+    vendor/aquarios/prebuilt/etc/APNs/apns-conf.xml:system/etc/apns-conf.xml
+
+# World SPN overrides list
+PRODUCT_COPY_FILES += \
+    vendor/aquarios/prebuilt/etc/APNs/spn-conf.xml:system/etc/spn-conf.xml
+
+# Selective SPN list for operator number who has the problem.
+PRODUCT_COPY_FILES += \
+    vendor/aquarios/prebuilt/etc/APNs/selective-spn-conf.xml:system/etc/selective-spn-conf.xml
+
+# Sensitive Phone Numbers list
+PRODUCT_COPY_FILES += \
+    vendor/aquarios/prebuilt/etc/APNs/sensitive_pn.xml:system/etc/sensitive_pn.xml
