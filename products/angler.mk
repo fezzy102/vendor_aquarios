@@ -16,7 +16,7 @@
 include vendor/aquarios/configs/aquarios_phone.mk
 
 # Inherit AOSP device configuration for angler
-$(call inherit-product, device/huawei/angler/aosp_angler.mk)
+$(call inherit-product, device/huawei/angler/aquarios.mk)
 
 # Override AOSP build properties
 PRODUCT_NAME := angler
