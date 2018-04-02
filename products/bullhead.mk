@@ -16,7 +16,26 @@
 include vendor/aquarios/configs/aquarios_phone.mk
 
 # Inherit AOSP device configuration for bullhead
-$(call inherit-product, device/lge/bullhead/aosp_bullhead.mk)
+$(call inherit-product, device/lge/bullhead/bullhead.mk)
+
+# Inherit gapps for bullhead
+$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+
+# Bullhead overides
+ifneq ($(filter bullhead,$(PRODUCT_DEVICE)),)
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.debug.alloc=0 \
+    ro.carrier=unknown \
+    ro.opa.eligible_device=true \
+    ro.storage_manager.enabled=true \
+    drm.service.enabled=true \
+    media.mediadrmservice.enable=true
+
+# exFAT tools
+PRODUCT_PACKAGES += \
+    fsck.exfat \
+    mkfs.exfat
+endif
 
 # Override AOSP build properties
 PRODUCT_NAME := bullhead
