@@ -19,7 +19,7 @@ include vendor/aquarios/configs/aquarios_phone.mk
 $(call inherit-product, device/google/taimen/aquarios.mk)
 
 # Build with gapps
-$(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
+$(call inherit-product-if-exists, vendor/gapps/gapps.mk)
 
 # Include AmbientSense if it's available
 -include vendor/ambientmusic/AmbientMusic.mk
