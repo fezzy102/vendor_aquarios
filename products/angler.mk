@@ -30,3 +30,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=angler \
     BUILD_FINGERPRINT=google/angler/angler:8.1.0/OPM5.171019.019/4619337:user/release-keys \
     PRIVATE_BUILD_DESC="angler-user 8.1.0 OPM5.171019.019 4619337 release-keys"
+
+# Include per devices
+PRODUCT_PACKAGES += \
+    Camera2
