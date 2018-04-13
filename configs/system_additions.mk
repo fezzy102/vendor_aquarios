@@ -27,6 +27,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/aquarios/prebuilt/bin/fstrim:system/bin/fstrim
 
+# Unlimitted photo storage in Google Photos
+PRODUCT_COPY_FILES += \
+    vendor/aquarios/prebuilt/etc/sysconfig/pixel_2017_exclusive.xml:system/etc/sysconfig/pixel_2017_exclusive.xml
+
 # Disable Rescue Party
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.disable_rescue=true
