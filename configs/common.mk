@@ -57,3 +57,7 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librsjni
+
+# Clean cache
+PRODUCT_COPY_FILES += \
+    vendor/aquarios/tools/clean_cache.sh:system/bin/clean_cache.sh
