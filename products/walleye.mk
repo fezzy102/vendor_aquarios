@@ -21,11 +21,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
 # Call some device specific files for walleye
 $(call inherit-product, device/google/walleye/aquarios.mk)
-$(call inherit-product-if-exists, vendor/google_devices/walleye/proprietary/device-vendor.mk)
-$(call inherit-product-if-exists, vendor/google/walleye/walleye-vendor.mk)
+$(call inherit-product, device/google/walleye/device-walleye.mk)
+$(call inherit-product, vendor/google/walleye/walleye-vendor.mk)
 
-# Build with gapps
-$(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
+# Add some gapps
+$(call inherit-product, vendor/gapps/gapps.mk)
 
 # Audio effects
 PRODUCT_COPY_FILES += \
@@ -44,8 +44,5 @@ PRODUCT_MANUFACTURER := Google
 # Device Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=walleye \
-    BUILD_FINGERPRINT=google/walleye/walleye:8.1.0/OPM1.171019.021/4565141:user/release-keys \
-    PRIVATE_BUILD_DESC="walleye-user 8.1.0 OPM1.171019.021 4565141 release-keys"
-
-
-
+    BUILD_FINGERPRINT=google/walleye/walleye:8.1.0/OPM2.171019.029/4657601:user/release-keys \
+    PRIVATE_BUILD_DESC="walleye-user 8.1.0 OPM2.171019.029 4657601 release-keys"
