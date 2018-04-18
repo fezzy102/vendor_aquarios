@@ -34,5 +34,7 @@ add_lunch_combo h811-userdebug
 add_lunch_combo h811-eng
 add_lunch_combo h870-userdebug
 add_lunch_combo h870-eng
+add_lunch_combo h872-userdebug
+add_lunch_combo h872-eng
 add_lunch_combo us997-userdebug
 add_lunch_combo us997-eng
