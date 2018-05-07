@@ -17,7 +17,8 @@ PRODUCT_PACKAGES += \
     GBoardDarkTheme \
     SystemUIDarkTheme \
     SettingsDarkTheme \
-    SystemDarkTheme
+    SystemDarkTheme \
+    SystemBlackTheme
 
 # Overlays
 PRODUCT_PACKAGES += \
